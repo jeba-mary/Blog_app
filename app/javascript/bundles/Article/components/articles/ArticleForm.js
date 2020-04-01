@@ -17,7 +17,7 @@ class ArticleForm extends React.Component {
     return (
       <div className={className}>
         <label>{label}</label>
-        <input {...input} autoComplete="off" />
+        <input {...input} autoComplete="off"  className="pa2 ba b--black-40 w-100" />
         {this.renderError(meta)}
       </div>
     );
@@ -29,11 +29,16 @@ class ArticleForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
-        <Field name="title"  component={this.renderInput} label="Enter Title"/>
-        <Field name="content" component={this.renderInput} label="Enter Content" />
-        <button className="btn btn-primary">Save</button>
-      </form>
+      <div class="flex flex-column justify-center items-center">
+        <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
+          <Field name="title"  component={this.renderInput} label="Enter Title"/>
+          <Field name="content" component={this.renderInput} label="Enter Content" />
+          <div style={{top: "50%", left:"50px"}}>
+            <button className="btn btn-primary" >Save</button>
+          </div>
+        </form>
+      </div>  
+      
     );
   }
 }

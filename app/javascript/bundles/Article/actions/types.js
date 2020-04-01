@@ -1,4 +1,6 @@
 export const SIGN_UP = 'SIGN_UP';
+export const SIGN_IN = 'SIGN_IN';
+export const SIGN_OUT = 'SIGN_OUT';
 export const CREATE_ARTICLE = 'CREATE_ARTICLE';
 export const FETCH_ARTICLES = 'FETCH_ARTICLES';
 export const DELETE_ARTICLE = 'DELETE_ARTICLE';

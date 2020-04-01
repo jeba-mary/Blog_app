@@ -1,11 +1,9 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
-import { signUp } from '../actions';
+import { Link }  from 'react-router-dom';
 
 
-class RegisterPage extends React.Component {
-
+class SessionPage extends React.Component {
   renderError({ error, touched }) {
     if(touched && error) {
       return (
@@ -20,20 +18,20 @@ class RegisterPage extends React.Component {
     return (
       <div className={className}>
         <label>{label}</label>
-        <input {...input} autoComplete="off" />
+        <input {...input} autoComplete="off" className="pa2 ba b--black-40 w-100"/>
         {this.renderError(meta)}
       </div>
     );
   }
 
   onSubmit = (formValues) => {
-    this.props.signUp(formValues);
+    this.props.onSubmit(formValues);
   }
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.onSubmit}>
+      <div class="container">
+      <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
         <Field
           name="email"
           component={this.renderInput}
@@ -45,22 +43,21 @@ class RegisterPage extends React.Component {
           component={this.renderInput}
           label="Password"
         />
-        <Field
-          name="password_confirmation"
-          type="password"
-          component={this.renderInput}
-          label="Password Again"
-        />
+        <br/>
+        <button className="btn btn-primary">Login</button>
 
-        <button className="btn btn-primary">Register</button>
+      </form>
 
-        </form>
+      <div className="position-absolute mid-center" style={{top: "50%", left: "50%"}}>
+          <Link to="/sign_up" className="btn btn-primary">CreateNewAccount</Link>
+        </div>
+
+
       </div>
     )
   }
 }
 
-
 export default reduxForm({
-  form: 'RegisterPage',
-})(RegisterPage);
+  form: 'SessionPage',
+})(SessionPage);

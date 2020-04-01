@@ -34,21 +34,12 @@ class ArticleList extends React.Component {
       );
     });
   }
-
-  renderCreate() {
-      return (
-        <div style={{textAlign: 'right'}}>
-          <Link to="/articles/new" class="btn btn-success" >Create</Link>
-        </div>
-      )
-  }
+ 
   render() {
     return (
       <div>
+        <br />
         <div class="container">
-          <h2>Articles</h2>
-
-          {this.renderCreate()} <br />
           {this.renderList()}
         </div>
       </div>

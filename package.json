@@ -10,6 +10,8 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "bootstrap": "^4.4.1",
+    "tachyons": "^4.8.1",
+
     "connected-react-router": "^6.8.0",
     "react-on-rails": "11.3.0",
     "redux-form": "^8.3.1"

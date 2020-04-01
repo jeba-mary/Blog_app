@@ -12,7 +12,7 @@ class ArticleCreate extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="container">
         <h4>CreateArticle</h4>
         <ArticleForm onSubmit={this.onSubmit} />
       </div>

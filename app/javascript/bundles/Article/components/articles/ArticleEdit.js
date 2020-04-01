@@ -19,8 +19,8 @@ class ArticleEdit extends React.Component {
       return <div>Loading...</div>
     }
     return(
-      <div>
-        <h3>Edit a Stream</h3>
+      <div class="container">
+        <h4>EditArticle</h4>
         <ArticleForm 
           initialValues={_.pick(this.props.article, 'title', 'content')}
           onSubmit={this.onSubmit} />
